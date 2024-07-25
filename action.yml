@@ -31,7 +31,22 @@ inputs:
   github-org:
     description: 'Github Organisation where the repository is hosted, to check for the latest release.'
     required: false
-    
+  is-pinned:
+    description: 'If an Asana comment should be pinned'
+    required: false
+  asana-section-id:
+    description: 'Global Section ID for moving tasks to sections'
+    required: false
+  asana-tag-id:
+    description: 'Global Tag ID for adding or removing Tags'
+    required: false
+  asana-project-id:
+    description: 'Global Project ID to check while moving sections'
+    required: false
+  comment-text:
+    description: 'Optional Comment Text used instead of commit char'
+    required: false
+
 runs:
   using: 'node20'
   main: 'index.js'

@@ -22,11 +22,12 @@ This action integrates asana with github.
 * `notify-pr-approved` to add a comment to the Asana task when the PR has been approved
 * `notify-pr-merged` to complete the Asana task when a PR has been merged
 * `check-pr-membership` checks the PR sender membership in the organisation that owns the repo
-* `add-asana-comment` adds a comment to the Asana task with the link to the Pull Request
+* `add-asana-commit-comment` adds a Commit comment to the Asana task with the link to the Pull Request
+* `add-asana-pr-comment` adds a PR comment to the Asana task with the link to the Pull Request
 * `add-task-asana-project` adds a task to a project / section in Asana
-* `create-asana-pr-task` to create a task in Asana based on the Github Pull Request 
+* `create-asana-pr-task` to create a task in Asana based on the Github Pull Request
 * `get-latest-repo-release` to find the latest release version of a Github Repository
-* `create-asana-task` to create a task in Asana 
+* `create-asana-task` to create a task in Asana
 
 ### Create Asana task from Github Issue
 When a Github Issue has been added, it will create an Asana task with the Issue title, description and link.
@@ -157,7 +158,7 @@ jobs:
         with:
           asana-pat: 'Your PAT'
           trigger-phrase: 'Your Trigger Phrase'
-          action: 'add-asana-comment'
+          action: 'add-asana-pr-comment'
 ```
 
 ### Add task to an Asana project
@@ -207,7 +208,7 @@ jobs:
     steps:
       - name: Create Asana task in Asana Project
         uses: duckduckgo/native-github-asana-sync@v1.0
-        with:          
+        with:
           asana-project: 'Asana Project Id'
           action: 'create-asana-pr-task'
 ```
@@ -269,7 +270,7 @@ jobs:
     steps:
       - name: Create Asana task in Asana Project
         uses: duckduckgo/native-github-asana-sync@v1.0
-        with:          
+        with:
           asana-project: 'Asana Project Id'
           asana-section: 'Asana Section Id'
           asana-task-name: 'Asana Task Name'

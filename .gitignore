@@ -59,3 +59,7 @@ typings/
 # next.js build output
 .next
 .idea
+
+# Testing with mock data
+github-commit-context.json
+github-pr-context.json
